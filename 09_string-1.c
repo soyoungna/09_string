@@ -4,25 +4,18 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *fp = NULL;
-	char str[100];
-	char c;
-	int i;
+	char src[100] = "programming course";
+	char dst[100];
+	int i=0;
 	
-	fp =fopen("sample.txt","r");
-	
-    /*while((c=fgetc(fp))!=EOF)
-    {
-    	putchar(c);
-    
+	while(src[i]!='\0')
+	{
+		dst[i]=src[i];
+		i++;
 	}
-    */
-     while(fgets(str,100,fp)!=NULL)
-    {
-         printf(str);
-     }
-    
-	fclose(fp); 
 	
+	dst[i]='\0';
+	
+	printf("dst : %s\n",dst);
 	return 0;
 }
