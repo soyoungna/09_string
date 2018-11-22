@@ -4,18 +4,19 @@
 
 int main(int argc, char *argv[]) {
 	
-	char src[100] = "programming course";
-	char dst[100];
-	int i=0;
+	FILE *fp=NULL;
+	char input[100];
+	int i;
 	
-	while(src[i] != '\0')
-    {
-    	dst[i] = src[i];
-    	i++;
-		}	
-	dst[i]='\0';
+	fp = fopen("sample-1.txt","w");
 	
-	printf("dst : %s(%i)\n",dst,i);
+	for(i=0;i<3;i++)
+	{
+		printf("input a word : ");
+		scanf("%s", input);
+		fprintf(fp,"%s\n", input);
+	}
 	
+	fclose(fp);
 	return 0;
 }
