@@ -4,35 +4,18 @@
 
 int main(int argc, char *argv[]) {
 	
-	FILE *fp1=NULL;
+	char src[100] = "programming course";
+	char dst[100];
+	int i=0;
 	
-    char input[100];
-    char word[100];
-    char filename[100];
-    char find[100];
-    
-    
-    printf( "file name : ");
-    scanf("%s",filename);
-    
-    fp1= fopen(filename,"r");
-    
-    printf("word to find : ");
-    scanf("%s",word);
-    
-    
-    while(fgets(input,100,fp1)!=NULL)
-	{
-		if (strncmp(input,word,strlen(word))==0)
-		{
-			printf("find a word %s",input);
-		}
-		
-	}
-    
+	while(src[i] != '\0')
+    {
+    	dst[i] = src[i];
+    	i++;
+		}	
+	dst[i]='\0';
 	
-	
-	fclose(fp1);
+	printf("dst : %s(%i)\n",dst,i);
 	
 	return 0;
 }
